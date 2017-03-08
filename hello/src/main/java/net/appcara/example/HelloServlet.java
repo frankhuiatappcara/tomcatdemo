@@ -35,18 +35,34 @@ public class HelloServlet extends HttpServlet {
       try {
          out.println("<!DOCTYPE html>");
          out.println("<html>");
-         out.println("<head><title>Qurey Servlet</title></head>");
+         out.println("<head><title>DevOps Demo</title>");
+         out.println("<style> table { font-family: arial, sans-serif; border-collapse: collapse; width: 100%; }");
+         out.println("td, th { border: 1px solid #dddddd; text-align: left; padding: 8px; }");
+         out.println("tr:nth-child(even) { background-color: #dddddd; } </style>");
+         out.println("</head>");
          out.println("<body>");
+         out.println("<h1>Employee List</h1>");
  
+         out.println("<table>");
+         out.println("<tr>");
+         out.println("<th>First Name</th>");
+         out.println("<th>Last Name</th>");
+         out.println("</tr>");
+
          conn = pool.getConnection();
          stmt = conn.createStatement();
          ResultSet rset = stmt.executeQuery("SELECT first_name, last_name FROM employees");
          int count=0;
          while(rset.next()) {
-            out.println("<p>" + rset.getString("first_name") + ", "
-                  + rset.getString("last_name") + "</p>");
+            out.println("<tr>");
+            out.println("<td>" + rset.getString("first_name") + "</td>");
+            out.println("<td>" + rset.getString("last_name") + "</td>");
+            out.println("</tr>");
             ++count;
          }
+
+         out.println("</table>");
+
          out.println("<p>==== " + count + " rows found =====</p>");
 
          out.println("<h1>Appcara Demo</h1>");
