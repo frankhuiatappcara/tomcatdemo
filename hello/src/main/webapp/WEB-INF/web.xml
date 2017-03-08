@@ -9,6 +9,14 @@
 
     <display-name>Hello World Web Application</display-name>
 
+    <resource-ref>
+        <description>DB Connection Pool</description>
+        <res-ref-name>jdbc/TestDB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>net.appcara.example.HelloServlet</servlet-class>
