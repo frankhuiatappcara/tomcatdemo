@@ -65,7 +65,7 @@ public class HelloServlet extends HttpServlet {
 
          out.println("<p>==== " + count + " rows found =====</p>");
 
-         out.println("<h1>Appcara Demo</h1>");
+         out.println("<h1>Tomcat Auto-Deploy Demo</h1>");
 
          out.println("</body></html>");
       } catch (SQLException ex) {
@@ -79,9 +79,5 @@ public class HelloServlet extends HttpServlet {
              ex.printStackTrace();
          }
       }
-/*
-        PrintWriter writer = response.getWriter();
-        writer.print("HDS Demo");
-*/
     }
 }
