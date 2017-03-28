@@ -65,7 +65,7 @@ public class HelloServlet extends HttpServlet {
 
          out.println("<p>==== " + count + " rows found =====</p>");
 
-         out.println("<h1>Multi-Cloud Demo - March 20 14:04</h1>");
+         out.println("<h1>Multi-Cloud Demo1 - March 20 14:04</h1>");
 
          out.println("</body></html>");
       } catch (SQLException ex) {
