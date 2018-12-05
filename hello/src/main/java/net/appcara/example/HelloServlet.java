@@ -28,6 +28,7 @@ public class HelloServlet extends HttpServlet {
                          HttpServletResponse response) throws ServletException, IOException {
 
       response.setContentType("text/html;charset=UTF-8");
+      String serverIP = request.getLocalAddr();
       PrintWriter out = response.getWriter();
  
       Connection conn = null;
@@ -41,7 +42,8 @@ public class HelloServlet extends HttpServlet {
          out.println("tr:nth-child(even) { background-color: #dddddd; } </style>");
          out.println("</head>");
          out.println("<body>");
-         out.println("<h1>Employee List</h1>");
+         out.println("<h1>Server IP:  " + serverIP + "</h1>");
+         out.println("<h2>Employee List</h2>");
  
          out.println("<table>");
          out.println("<tr>");
